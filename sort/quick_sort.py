@@ -8,17 +8,17 @@ def show_array(arrays):
 
 def partition(arr,l,r):
 	pivot=arr[r]
-	print "current pivot is " + str(pivot)
+	#print "current pivot is " + str(pivot)
 	i=l
 	j=r-1
 	while True:
-		while arr[i]<=pivot:
+		while arr[i]<pivot:
 			i=i+1
-		while arr[j]>=pivot:
+		while arr[j]>pivot:
 			j=j-1
 		if(i>=j):
 			break
-		print "swapping "+ str(arr[i]) +" and " +str(arr[j])
+		#print "swapping "+ str(arr[i]) +" and " +str(arr[j])
 		temp=arr[i]
 		arr[i]=arr[j]
 		arr[j]=temp
@@ -38,8 +38,8 @@ def quick_sort(arr,l,r):
 	if(l>=r):
 		return
 	v=partition(arr,l,r)
-	show_array(arr)
-	print "now looking at " + str(l)
+	#show_array(arr)
+	#print "now looking at " + str(l)
 	quick_sort(arr,l,v-1)
 	quick_sort(arr,v+1,r)
 	return arr

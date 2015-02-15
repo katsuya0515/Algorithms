@@ -22,7 +22,7 @@ def heap_sort(arr):
 
 def build_heap(arr,root,bottom):
 	while (root*2)<=bottom:
-		
+
 		if (root*2)==bottom:
 			maxChild=root*2
 		elif(arr[(root*2)+1]>arr[root*2]):
@@ -43,3 +43,6 @@ def build_heap(arr,root,bottom):
 show_array(arrays)
 sorted=heap_sort(arrays)
 show_array(sorted)
+
+
+

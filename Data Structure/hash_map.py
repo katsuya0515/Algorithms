@@ -16,7 +16,7 @@ class HashTable :
 			key+=1
 			key%=self.size
 
-		print str(val) + " is stored in " + str(key)
+		#print str(val) + " is stored in " + str(key)
 		self.table[key]=val
 
 	def find(self,val):
@@ -24,12 +24,18 @@ class HashTable :
 		for c in list(val):
 			ascii+=ord(c)
 		key=ascii%self.size
-		while  self.table[key]!=val:
+		print str(key)
+		count=0
+		while  True:
+			if self.table[key]== val:
+				return self.table[key]
 			key+=1
-			key%=self.size
-			if self.table[key]==val:
-				break
-		return self.table[key]
+			key%=self.size	
+			count+=1
+			if count>self.size:
+				break	
+		return False
+		
 
 
 
@@ -39,4 +45,4 @@ hash.insert("aaa")
 hash.insert("bbb")
 hash.insert("ccc")
 
-print hash.find("aaa")
+print str(hash.find("ddd"))

@@ -1,0 +1,29 @@
+class Node:
+	def __init__(self,val):
+		self.value=val
+		self.next=None
+
+	def append(self,val):
+		self.next=Node(val)
+
+
+
+class Linked_list:
+	def __init__(self):
+		self.root=None
+
+	def append(self,val):
+		if self.root:
+			return self.root.append(data)
+		else:
+			self.root=Node(val)
+			return True
+
+array=Linked_list()
+array.append(10)
+array.append(5)
+array.append(12)
+array.append(3)
+array.append(7)
+
+print array

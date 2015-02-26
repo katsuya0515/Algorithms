@@ -50,14 +50,32 @@ class Node:
 			queue=Queue()
 
 			queue.put(self)
+			prev=0
 
 			while queue.empty() != True:
+
 				temp=queue.get()
+				depth=temp.getNodeDepth()
+				if(depth!=prev):
+					print "\n"
 				print temp.value
 				if temp.leftChild:
 					queue.put(temp.leftChild)
 				if temp.rightChild:
 					queue.put(temp.rightChild)
+
+
+	def isBST(self,maxValue,minValue):
+			if self.leftChild:
+				if self.value<maxValue and self.value > minValue and self.leftChild.isBST(self.value,minValue):
+					return True
+			elif self.rightChild:
+				 if self.value<maxValue and self.value > minValue and self.rightChild.isBST(maxValue,self.value):
+					return True 
+			else:
+				return False
+
+					
 
 	def findHeight(self):
 
@@ -69,6 +87,24 @@ class Node:
 			return self.leftChild.findHeight() +1
 		elif self.rightChild:
 			return self.rightChild.findHeight() +1
+
+
+	def getDepth(self,val,count):
+		print "now looking at " +str(self.value) +" trying to find " + str(val) + "at level " + str(count)
+		left=0
+		right=0
+		if self.value == val:
+			print "found at " + str(count) 
+			return count
+		else:
+			if self.leftChild :
+				 left=self.leftChild.getDepth(val,count+1)
+			if self.rightChild:
+				 right=self.rightChild.getDepth(val,count+1)
+			return max(left,right)
+    
+        
+       
 
 			
 
@@ -114,6 +150,19 @@ class Tree:
 			return False
 		else:
 			return self.root.findHeight()
+
+	def isBST(self):
+		if self.root==None:
+			return False
+		else:
+			return self.root.isBST(100,-100)
+	def getDepth(self,val):
+		if self.root==None:
+			return False
+		else:
+			return self.root.getDepth(val,1)
+
+
 
 				
 
@@ -167,6 +216,18 @@ class Queue:
 			return False
 
 
+             
+
+                
+     
+
+                 
+
+
+
+
+
+#bst.level_order_travese()
 
 
 
@@ -182,6 +243,9 @@ bst.insert(18)
 bst.insert(2)
 bst.insert(1)
 
+#print bst.isBST()
+print bst.getDepth(17)
+
 #traverse 
 #bst.preorder()
 #print " "
@@ -190,7 +254,7 @@ bst.insert(1)
 #bst.postorder()
 #bst.breadth_first()
 
-print bst.findHeight()
+#print bst.findHeight()
 
 
 

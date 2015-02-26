@@ -23,8 +23,7 @@ def quick_sort(arr,l,r):
 	if(l>=r):
 		return
 	v=parition(arr,l,r)
-	quick_sort(arr,l,v-1)
-	quick_sort(arr,v+1,r)
+	quick_sort(arr,l,v-1`	quick_sort(arr,v+1,r)
 	
 	return arr
 

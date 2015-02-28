@@ -1,7 +1,17 @@
 
+ class Node:
+ 	def __init__(self, x):
+         self.data = x
+         self.bros = None
+         self.child = None
+
+
+
 class Trie:
-    class Node:
-        def __init__(self, x, bros = None, child = None):
-            self.data = x
-            self.bros = bros
-            self.child = child
+	def __init__(self):
+		self.root=None;
+
+
+
+
+  

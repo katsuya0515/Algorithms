@@ -104,10 +104,6 @@ class Node:
 			return max(left,right)
     
         
-       
-
-			
-
 class Tree:
 	def __init__(self):
 		self.root=None
@@ -214,18 +210,7 @@ class Queue:
 			return True
 		else:
 			return False
-
-
-             
-
                 
-     
-
-                 
-
-
-
-
 
 #bst.level_order_travese()
 
@@ -244,14 +229,14 @@ bst.insert(2)
 bst.insert(1)
 
 #print bst.isBST()
-print bst.getDepth(17)
+#print bst.getDepth(17)
 
 #traverse 
-#bst.preorder()
-#print " "
-#bst.inorder()
-#print " "
-#bst.postorder()
+bst.preorder()
+print " "
+bst.inorder()
+print " "
+bst.postorder()
 #bst.breadth_first()
 
 #print bst.findHeight()

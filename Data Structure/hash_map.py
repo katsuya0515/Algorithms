@@ -3,13 +3,11 @@ class HashTable :
 	def __init__(self,size):
 		self.size=size
 		self.table=[0]*size
+		#print self.table
 
 
-	def insert(self,val):
-		ascii=0
-		for c in list(val):
-			ascii+=ord(c)
-		key=ascii%self.size
+	def insert(self,val):	
+		key=self.get_key(val)
 		
 		while self.table[key]!=0:
 			print	"Collision Occured"
@@ -19,12 +17,16 @@ class HashTable :
 		#print str(val) + " is stored in " + str(key)
 		self.table[key]=val
 
-	def find(self,val):
+	def get_key(self,val):
 		ascii=0
 		for c in list(val):
 			ascii+=ord(c)
 		key=ascii%self.size
-		print str(key)
+		return key
+
+	def find(self,val):
+		key=self.get_key(val)
+
 		count=0
 		while  True:
 			if self.table[key]== val:
@@ -45,4 +47,4 @@ hash.insert("aaa")
 hash.insert("bbb")
 hash.insert("ccc")
 
-print str(hash.find("ddd"))
+print str(hash.find("bbb"))

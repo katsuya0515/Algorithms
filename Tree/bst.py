@@ -208,5 +208,8 @@ bst.insert(1)
 #bst.getDepth(18)
 bst.preorder()
 print ""
-bst.breadth_traverse()
-bst.check_bst()
+bst.inorder()
+print ""
+bst.postorder()
+#bst.breadth_traverse()
+#bst.check_bst()
